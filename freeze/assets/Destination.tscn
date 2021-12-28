@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="Destination" type="Spatial"]
+
+[node name="MainBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="MainBody"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="MainBody"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.59687 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0.95587, 0.29379, 0, -0.29379, 0.95587, 0, 2.5555, 3.23697 )
